@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "fa8430aa-f957-4d9f-8abb-989e2928e461",
+		"name": "Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Word List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"words\":[\"adasdas\",\"dsfdsfds\",\"cscasd\",\"assdfe\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/word-list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"word-list"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "An endpoint that takes a list of words as a parameter and returns the list, concatenated as a\nsingle string, with the words separated by the | symbol.\n\n`words:* ` A string array.[String]\n\n`*` Required fields"
+			},
+			"response": []
+		},
+		{
+			"name": "Summary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "upload",
+							"type": "file",
+							"src": "/home/huseyin/Desktop/projects/personal_study/flask_restful/app/sample/file.csv"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/sum",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"sum"
+					]
+				},
+				"description": "An endpoint that takes a CSV file. This file will contain 2 columns of numbers, it will take the\nfile multiply the numbers on each row and the answer will be added in a third column. The\nendpoint will send back a new CSV file with 3 columns, “number 1”, “number 2” & “answer”\n\n`upload:* ` Csv file.\n\n`*` Required fields"
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"first_name\": \"true\",\n        \"last_name\": \"Smith\",\n        \"d_o_b\": \"1985-12-04\",\n        \"favorite_film\": \"Back to the Future\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/pass-gen",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"pass-gen"
+					]
+				},
+				"description": "An endpoint that generates a password for a user.\n\n`first_name:* ` First name (String)\n`last_name:* ` Last name (String)\n`d_o_b:* ` Date of birth (String)\n`favorite_film:* ` Favourite Film (String)\n\n`*` Required fields"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

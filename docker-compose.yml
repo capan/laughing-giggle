@@ -1,0 +1,11 @@
+version: "3"
+services:
+  be:
+    build: ./app
+    environment:
+      FLASK_APP: app
+    working_dir: /app
+    command: "flask run --host=0.0.0.0"
+    network_mode: host
+    # ports:
+    #   - "5000:5000"
